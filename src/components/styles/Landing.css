@@ -110,6 +110,33 @@
   bottom: 50px;
   pointer-events: inherit;
 }
+
+@media screen and (max-width: 600px) {
+  .character-model {
+    height: min(58vh, 420px);
+    bottom: 32px;
+  }
+  .landing-info {
+    max-width: calc(100vw - 24px);
+    padding: 0 max(8px, env(safe-area-inset-right, 0px)) 0
+      max(8px, env(safe-area-inset-left, 0px));
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .character-model {
+    height: min(52vh, 360px);
+    bottom: 24px;
+  }
+  .landing-intro {
+    top: 10%;
+  }
+  .landing-intro h1 {
+    font-size: clamp(22px, 6.5vw, 28px);
+    line-height: 1.05;
+  }
+}
 .character-model::after {
   content: "";
   width: 100vw;
@@ -161,6 +188,9 @@
   z-index: 9;
   top: 12%;
   left: 0;
+  max-width: calc(100% - 24px);
+  padding-left: max(0px, env(safe-area-inset-left, 0px));
+  box-sizing: border-box;
 }
 .landing-intro h2 {
   margin: 0;

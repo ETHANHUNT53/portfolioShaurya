@@ -30,6 +30,43 @@
   letter-spacing: 1px;
 }
 
+/* Phones: block centered in the viewport + copy centered */
+@media only screen and (max-width: 767px) {
+  .about-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
+    justify-content: center;
+    align-items: center;
+    min-height: var(--vh);
+    text-align: center;
+  }
+  .about-me {
+    width: 100%;
+    max-width: min(36rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .about-me h3 {
+    font-size: clamp(16px, 4vw, 22px);
+    letter-spacing: 4px;
+    text-align: center;
+  }
+  .about-me p {
+    font-size: clamp(1.05rem, 4.5vw, 1.35rem);
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-wrap: balance;
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .about-section {
     justify-content: center;

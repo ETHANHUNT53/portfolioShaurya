@@ -32,6 +32,11 @@
 .do-h2 {
   color: var(--accentColor);
 }
+
+.what-title-line--1,
+.what-title-line--2 {
+  display: block;
+}
 .what-box-in {
   flex-direction: column;
   height: 500px;
@@ -198,6 +203,11 @@
   opacity: 0.8;
   animation: whatBorders 1.2s 1 forwards;
 }
+
+.what-content p + p {
+  margin-top: 0.65em;
+}
+
 .what-border2 svg {
   height: 500px;
   top: 50%;
@@ -375,14 +385,70 @@
   }
 }
 @media only screen and (max-width: 550px) {
-  .whatIDO {
-    place-items: inherit;
-    align-items: start;
-    justify-content: left;
-  }
   .what-box {
     max-width: calc(100% - 25px);
-    margin: 0;
+  }
+}
+
+/* Phones: section + heading centered in the viewport */
+@media only screen and (max-width: 767px) {
+  .whatIDO {
+    min-height: var(--vh);
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+  }
+  .what-box:first-child {
+    justify-content: center;
+  }
+  .what-box {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  .what-box h2 {
+    text-align: center;
+    margin-inline: auto;
+    white-space: nowrap;
+  }
+  .what-title-line--1,
+  .what-title-line--2 {
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .whatIDO {
+    padding: 32px 0 40px;
+  }
+  .what-box h2 {
+    font-size: clamp(18px, 5.2vw, 40px);
+    line-height: 1.1;
+    margin: 20px auto 32px;
+  }
+  .what-box-in {
+    height: auto;
+    min-height: 360px;
+    max-width: 100%;
+  }
+  .what-content {
+    padding: 16px 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .what-content h3 {
+    font-size: 22px;
+  }
+  .what-content p {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .what-tags {
+    font-size: 10px;
+    padding: 4px 8px;
   }
 }
 @media only screen and (min-width: 1950px) {

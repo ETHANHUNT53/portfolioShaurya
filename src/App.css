@@ -26,3 +26,19 @@
     max-width: var(--cWidth);
   }
 }
+@media only screen and (max-width: 768px) {
+  .section-container {
+    width: 100%;
+    max-width: var(--cWidth);
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .section-container {
+    padding-left: max(10px, env(safe-area-inset-left, 0px));
+    padding-right: max(10px, env(safe-area-inset-right, 0px));
+  }
+}

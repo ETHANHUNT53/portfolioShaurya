@@ -187,7 +187,8 @@
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 20px 0px;
+  padding: max(16px, env(safe-area-inset-top, 0px)) max(0px, env(safe-area-inset-right, 0px))
+    12px max(0px, env(safe-area-inset-left, 0px));
   left: 50%;
   transform: translateX(-50%);
   top: 0;
@@ -197,6 +198,14 @@
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+}
+.loader-sj-logo {
+  width: 64px;
+  height: auto;
+  display: block;
+  color: inherit;
 }
 @keyframes blink {
   0% {
@@ -352,6 +361,9 @@
   .loader-title {
     font-size: 16px;
   }
+  .loader-sj-logo {
+    width: 72px;
+  }
 }
 @media only screen and (min-width: 1200px) {
   .loading-header {
@@ -359,5 +371,8 @@
   }
   .loader-title {
     font-size: 18px;
+  }
+  .loader-sj-logo {
+    width: 84px;
   }
 }

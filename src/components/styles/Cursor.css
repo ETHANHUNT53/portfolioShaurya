@@ -31,3 +31,10 @@
     --size: 0px;
   }
 }
+@media (hover: none), (pointer: coarse) {
+  .cursor-main {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

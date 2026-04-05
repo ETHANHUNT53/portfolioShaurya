@@ -106,7 +106,7 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
-      const animate = () => {
+        const animate = () => {
         requestAnimationFrame(animate);
         if (headBone) {
           handleHeadRotation(
@@ -123,6 +123,7 @@ const Scene = () => {
         if (mixer) {
           mixer.update(delta);
         }
+        character?.updateMatrixWorld(true);
         renderer.render(scene, camera);
       };
       animate();

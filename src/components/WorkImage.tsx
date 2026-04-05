@@ -21,24 +21,45 @@ const WorkImage = (props: Props) => {
     }
   };
 
+  const inner = (
+    <>
+      {props.link ? (
+        <div className="work-link">
+          <MdArrowOutward />
+        </div>
+      ) : null}
+      <div className="work-image-dim" aria-hidden />
+      <img className="work-img" src={props.image} alt={props.alt ?? ""} />
+      {isVideo && (
+        <video src={video} autoPlay muted playsInline loop></video>
+      )}
+    </>
+  );
+
   return (
     <div className="work-image">
-      <a
-        className="work-image-in"
-        href={props.link}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={() => setIsVideo(false)}
-        target="_blank"
-        data-cursor={"disable"}
-      >
-        {props.link && (
-          <div className="work-link">
-            <MdArrowOutward />
-          </div>
-        )}
-        <img src={props.image} alt={props.alt} />
-        {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
-      </a>
+      {props.link ? (
+        <a
+          className="work-image-in"
+          href={props.link}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={() => setIsVideo(false)}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cursor="disable"
+        >
+          {inner}
+        </a>
+      ) : (
+        <div
+          className="work-image-in work-image-in-static"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={() => setIsVideo(false)}
+          data-cursor="disable"
+        >
+          {inner}
+        </div>
+      )}
     </div>
   );
 };
